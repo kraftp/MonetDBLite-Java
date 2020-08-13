@@ -407,7 +407,7 @@ BATCH_LEVEL_FOUR(Blob, GET_BAT_BLOB, CHECK_NULL_BLOB, BAT_TO_JBLOB, blob*, jbyte
 		aux->tdense = 0; \
 		p = (BAT_CAST *) Tloc(aux, 0); \
 		(*env)->Get##COPY_METHOD##ArrayRegion(env, data, 0, (jsize) cnt, (JAVA_CAST *) p); \
-		for(i = 0; i < cnt; i++, p++) { \
+		for(i = 0; i < cnt; i++) { \
 			value = p[i]; \
 			if (value == BAT_CAST##_nil) { \
 				aux->tnil = 1; \
